@@ -27,3 +27,19 @@
 6. Do for both ascending and decending as well as reverse order to account for scenarios where removing first bad level isnt optimal 
 - Time complexity: O(n)
 - Space complexity: O(1)
+
+# Day 3
+## Part 1
+1. Parse using regex to get all occurances of 'mul(x,y)'
+2. For each occurance of 'mul(x,y)', parse using regex again to find just x and y
+3. Multiply x and y and add to total
+- Time complexity: O(n)
+- Space complexity: O(n)
+## Part 2
+1. Parse using regex to get all occurances of 'mul(x,y)', 'don't()', and 'do()'
+2. Use a bool 'do' to keep track of whether or not multiply
+3. Loop through each found regex match, if 'don't()' then do = False, elif 'do()' then do = True
+4. For each occurance of 'mul(x,y)', parse using regex again to find just x and y
+5. If do == True, multiply x and y and add to total
+- Time complexity: O(n)
+- Space complexity: O(n)
