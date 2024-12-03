@@ -25,43 +25,29 @@ def day2_part1(reports):
 
 
 def day2_helper_asc(report):
-    # dont remove first num
-    count1 = 0
+    count = 0
     prev = report[0]
     for i in range(1, len(report)):
         if report[i] - prev > 3 or report[i] - prev <= 0:
-            count1 += 1
+            count += 1
         else:
             prev = report[i]
     
-    #remove first num
-    count2 = 0
-    for i in range(2, len(report)):
-        if report[i] - report[i-1] > 3 or report[i] - report[i-1] <= 0:
-            count2 += 1
-            break
-    if count1 >= 2 and count2 == 1:
+    if count >= 2:
         return False 
     else:
         return True
 
 def day2_helper_des(report):
-    # dont remove first num
-    count1 = 0
+    count = 0
     prev = report[0]
     for i in range(1, len(report)):
         if report[i] - prev >= 0 or report[i] - prev < -3:
-            count1 += 1
+            count += 1
         else:
             prev = report[i]
     
-    #remove first num
-    count2 = 0
-    for i in range(2, len(report)):
-        if report[i] - report[i-1] >= 0 or report[i] - report[i-1] < -3:
-            count2 += 1
-            break
-    if count1 >= 2 and count2 == 1:
+    if count >= 2:
         return False 
     else:
         return True
