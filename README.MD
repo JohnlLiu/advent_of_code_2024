@@ -40,6 +40,21 @@
 2. Use a bool 'do' to keep track of whether or not multiply
 3. Loop through each found regex match, if 'don't()' then do = False, elif 'do()' then do = True
 4. For each occurance of 'mul(x,y)', parse using regex again to find just x and y
-5. If do == True, multiply x and y and add to total
+5. If do == True, multiply x and y and add 1 to total
 - Time complexity: O(n)
 - Space complexity: O(n)
+
+# Day 4
+## Part 1
+1. Treat input as a grid
+2. Loop through each cell in the grid and check if cell is 'X'
+3. For each cell that is 'X', check in the 8 directions from that cell to see if it can make 'XMAS'
+4. For each direction that can make 'XMAS', add 1 to result
+- Time complexity: O(n) where n is total number of characters in the grid 
+- Space complexity: O(1)
+## Part 2
+1. Loop through each cell ignoring edge cells since they cant be middle of a X-MAS and check if cell is 'A'
+2. For each cell that is 'A', check opposite corner pairs if 1 is 'M' and the other is 'S'
+3. For each cell where the 4 corners and their opposite corner satisfies the condition, add 1 to total
+- Time complexity: O(n) where n is total number of characters in the grid 
+- Space complexity: O(1)
